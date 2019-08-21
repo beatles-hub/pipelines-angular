@@ -1,6 +1,6 @@
 include:
   - project: 'singletonsd/pipelines/npm'
-    file: '/src/.gitlab-ci-test-main.yml'
+    file: '/src/.gitlab-ci-main.yml'
 
 stages:
   - test_dynamic
