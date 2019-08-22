@@ -1,7 +1,0 @@
-include:
-  - project: 'singletonsd/pipelines/npm'
-    file: '/src/.gitlab-ci-main.yml'
-
-stages:
-  - test_dynamic
-  - test_static
