@@ -35,14 +35,14 @@ pre_deploy:aws_s3:
     - apk add --no-cache bash
     - pip install awscli
   script:
-    - npm run deploy-aws-s3
+    - ./scripts/uploader_amazon_s3.sh
   except:
     - schedules
   only:
     variables:
       - $CI_PROJECT_PATH == $ORIGINAL_REPOSITORY && $NG_APP_AWS_S3_DEPLOY == "true"
 
-deploy-image-branches:
+pre_deploy:docker:
   image: docker:latest
   services:
     - docker:dind
