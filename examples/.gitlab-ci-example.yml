@@ -1,0 +1,25 @@
+image: "${GLOBAL_IMAGE_NAME}:${GLOBAL_IMAGE_TAG}"
+
+variables:
+  GLOBAL_IMAGE_NAME: "node"
+  GLOBAL_IMAGE_TAG: "8-alpine"
+  TEST_STATIC_ALL: "true"
+  # If you have mirrors with ci-cd, write the main repo name to execute deploy job only there.
+  ORIGINAL_REPOSITORY: "group/name"
+  # If you want to deploy to aws s3.
+  NG_APP_AWS_S3_DEPLOY: "true"
+  NG_APP_AWS_S3_REGION: eu-west-3
+  # Bind the secret variable name to these variables. DONT PUT the keys here!
+  NG_APP_AWS_S3_ACCESS_KEY_ID: ${MY_SECRET_VARIABLE_ACCESS_KEY_ID}
+  NG_APP_AWS_S3_SECRET_ACCESS_KEY: ${MY_SECRET_VARIABLE_SECRET_ACCESS_KEY}
+
+include:
+  - project: 'singletonsd/pipelines/angular'
+    file: '/src/.gitlab-ci-app.yml'
+
+stages:
+  - install
+  - test_static
+  - build
+  - test_dynamic
+  - pre_deploy

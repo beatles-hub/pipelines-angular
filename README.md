@@ -10,6 +10,8 @@ This templates already include the templates of [npm repository](https://gitlab.
 
 ### USE
 
+If you want to skip reading, you can copy and paste [this example file](https://gitlab.com/singletonsd/pipelines/angular/raw/master/examples/.gitlab-ci-example.yml) and setup the variables.
+
 To use it, you can include them as following (using repository aproach):
 
 ```yaml
