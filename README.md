@@ -113,6 +113,7 @@ curl -o gitlab-ci_lint_test_standalone.sh -L https://singletonsd.gitlab.io/scrip
 - [X] Add app template.
 - [ ] Add library template.
 - [X] Add script to download test script from gitlab pages.
+- [X] Use ci-cd template.
 
 ----------------------
 
