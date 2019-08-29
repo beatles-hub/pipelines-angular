@@ -3,8 +3,6 @@ image: "${NG_APP_IMAGE_NAME}:${NG_APP_IMAGE_TAG}"
 include:
   - project: 'singletonsd/pipelines/npm'
     file: '/src/.gitlab-ci-main.yml'
-
-include:
   - project: 'singletonsd/pipelines/common'
     file: '/src/.gitlab-ci-pages.yml'
 
