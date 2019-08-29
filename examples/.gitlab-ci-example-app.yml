@@ -21,3 +21,4 @@ stages:
   - build
   - test_dynamic
   - pre_deploy
+  - deploy
