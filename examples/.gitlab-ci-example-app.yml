@@ -1,4 +1,6 @@
-image: "${GLOBAL_IMAGE_NAME}:${GLOBAL_IMAGE_TAG}"
+include:
+  - project: 'singletonsd/pipelines/angular'
+    file: '/src/.gitlab-ci-app.yml'
 
 variables:
   GLOBAL_IMAGE_NAME: "node"
@@ -12,10 +14,6 @@ variables:
   # Bind the secret variable name to these variables. DONT PUT the keys here!
   NG_APP_AWS_S3_ACCESS_KEY_ID: ${MY_SECRET_VARIABLE_ACCESS_KEY_ID}
   NG_APP_AWS_S3_SECRET_ACCESS_KEY: ${MY_SECRET_VARIABLE_SECRET_ACCESS_KEY}
-
-include:
-  - project: 'singletonsd/pipelines/angular'
-    file: '/src/.gitlab-ci-app.yml'
 
 stages:
   - install
