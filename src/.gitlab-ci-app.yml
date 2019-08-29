@@ -4,6 +4,10 @@ include:
   - project: 'singletonsd/pipelines/npm'
     file: '/src/.gitlab-ci-main.yml'
 
+include:
+  - project: 'singletonsd/pipelines/common'
+    file: '/src/.gitlab-ci-pages.yml'
+
 variables:
   NG_APP_IMAGE_NAME: "${GLOBAL_IMAGE_NAME:-node}"
   NG_APP_IMAGE_TAG: "${GLOBAL_IMAGE_TAG:-8-alpine}"
