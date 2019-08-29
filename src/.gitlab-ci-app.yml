@@ -36,6 +36,7 @@ pre_deploy:aws_s3:
   before_script:
     - apk add --no-cache bash
     - pip install awscli
+    - echo "Working at region $AWS_DEFAULT_REGION"
   script:
     - ./scripts/uploader_amazon_s3.sh
   except:
