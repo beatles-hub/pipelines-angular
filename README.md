@@ -20,14 +20,14 @@ include:
     file: '/src/.gitlab-ci-app.yml'
 ```
 
-Or using remote aproach over gitlab repo:
+Or using remote approach over gitlab repo:
 
 ```yaml
 include:
   - remote: 'https://gitlab.com/singletonsd/pipelines/angular/raw/master/src/.gitlab-ci-app.yml'
 ```
 
-Or using remote aproach over gilab pages:
+Or using remote approach over gilab pages:
 
 ```yaml
 include:
@@ -43,7 +43,7 @@ include:
   - remote: 'https://singletonsd.gitlab.io/singletonsd/pipelines/angular/feature-new/.gitlab-ci-app.yml'
 ```
 
-And also define the stages you want to use. It can be both or just one. Remember to include the one you want or main if you use both, like following:
+And also define the stages you want to use, like following:
 
 ```yaml
 stages:
