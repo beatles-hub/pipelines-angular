@@ -45,7 +45,6 @@ pre_deploy:aws_s3:
   only:
     variables:
       - $CI_PROJECT_PATH == $ORIGINAL_REPOSITORY && $NG_APP_AWS_S3_DEPLOY == "true"
-  only:
     changes:
       - config/**/*
       - ./*.json
