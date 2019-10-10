@@ -1,3 +1,4 @@
+# https://gitlab.com/singletonsd/pipelines/common
 include:
   - project: 'singletonsd/pipelines/common'
     file: '/src/.gitlab-ci-templates.yml'
