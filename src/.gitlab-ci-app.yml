@@ -45,6 +45,12 @@ pre_deploy:aws_s3:
   only:
     variables:
       - $CI_PROJECT_PATH == $ORIGINAL_REPOSITORY && $NG_APP_AWS_S3_DEPLOY == "true"
+  only:
+    changes:
+      - config/**/*
+      - ./*.json
+      - src/**/*
+      - .gitlab-ci.yml
 
 pre_deploy:docker:
   image: docker:latest
@@ -66,3 +72,9 @@ pre_deploy:docker:
     - ./scripts/generate_docker_image.sh ${DOCKER_REGISTRY} ${DOCKER_IMAGE_TAG} ${CI_COMMIT_SHA} 1
   except:
     - schedules
+  only:
+    changes:
+      - config/**/*
+      - ./*.json
+      - src/**/*
+      - .gitlab-ci.yml
