@@ -47,7 +47,7 @@ pre_deploy:aws_s3:
       - $CI_PROJECT_PATH == $ORIGINAL_REPOSITORY && $NG_APP_AWS_S3_DEPLOY == "true"
     changes:
       - config/**/*
-      - ./*.json
+      - "*.json"
       - src/**/*
       - .gitlab-ci.yml
 
